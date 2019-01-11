@@ -157,7 +157,7 @@ class Tamagotchi
             if($this->estadoAnimo){
                 return $this->estadoAnimo->getSonido();
             }else{
-                return $this->grunido;
+                return $this->grunido->grunir();
             }
         }else{
             return $this->roquido;

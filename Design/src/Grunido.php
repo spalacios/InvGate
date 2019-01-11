@@ -1,17 +1,12 @@
 <?php
 
 
-class Grunido
+abstract class Grunido
 {
     /**
      * @var string
      */
     private $nombre;
-
-    /**
-     * @var TipoGrunido
-     */
-    private $tipoGrunido;
 
     /**
      * @var float
@@ -23,10 +18,9 @@ class Grunido
      * @param $nombre
      * @param $duracion
      */
-    public function __construct($nombre, TipoGrunido $tipoGrunido, $duracion)
+    public function __construct($nombre, $duracion)
     {
         $this->nombre        = $nombre;
-        $this->tipoGrunido   = $tipoGrunido;
         $this->duracion      = $duracion;
     }
 
@@ -62,19 +56,6 @@ class Grunido
         $this->duracion = $duracion;
     }
 
-    /**
-     * @return TipoGrunido
-     */
-    public function getTipoDeGruñido()
-    {
-        return $this->tipoDeGruñido;
-    }
+    abstract public function grunir();
 
-    /**
-     * @param TipoGrunido $tipoDeGruñido
-     */
-    public function setTipoDeGruñido(TipoGrunido $tipoDeGruñido)
-    {
-        $this->tipoDeGruñido = $tipoDeGruñido;
-    }
 }
